@@ -25,7 +25,7 @@ public class ConfluentProducerApplication {
 
 	@Scheduled(fixedRate = 500L)
 	public void produceMessages(){
-		source.output().send(MessageBuilder.withPayload("Generating Message with Timestamp : " + Time.SYSTEM).build());
+		source.output().send(MessageBuilder.withPayload("Message Generated at : " + System.currentTimeMillis()).build());
 	}
 
 }
